@@ -1,68 +1,64 @@
 .form-container {
-  max-width: 400px;
-  margin: 20px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f9f9f9;
+  width: min(100%, 460px);
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
 }
 
 .form-container label {
   display: block;
-  margin-top: 10px;
-  font-weight: bold;
+  margin: 16px 0 8px;
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .form-container input {
   width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border: 1px solid #d8b4ed;
-  border-radius: 4px;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+}
+
+.form-container input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.12);
+  outline: none;
 }
 
 .form-container button {
-  margin-top: 15px;
-  padding: 10px;
   width: 100%;
-  border: none;
-  border-radius: 4px;
-  background-color: #502c5e;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
+  margin-top: 24px;
 }
 
-.form-container button:hover {
-  background-color: #781a9a;
+.form-container button:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
 }
 
 .error-message {
-  color: red;
-  margin-top: 10px;
-  font-weight: bold;
+  margin: 14px 0 0;
+  color: var(--danger);
+  font-weight: 800;
 }
 
 .toggle-link {
+  margin-top: 15px;
   text-align: center;
-  margin-top: 10px;
 }
 
 .toggle-link button {
   border: none;
   background: none;
-  color: #502c5e;
+  color: var(--accent);
   cursor: pointer;
-  font-weight: bold;
-}
-
-@media (max-width: 768px) {
-  .form-container { max-width: 350px; padding: 15px; }
-  .form-container input, .form-container button { padding: 10px; }
-}
-
-@media (max-width: 480px) {
-  .form-container { max-width: 95%; padding: 10px; }
-  .form-container input, .form-container button { padding: 12px; font-size: 14px; }
-  .error-message { font-size: 14px; }
+  font-weight: 800;
 }

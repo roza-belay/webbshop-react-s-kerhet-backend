@@ -4,6 +4,7 @@ import { ProductService, OrderService } from "../services/apiService";
 import { useAuth } from "../contexts/AuthContext";
 import { useCart } from "../contexts/CartContext";
 import imageMap from '../assets/ImageMap';
+import { fallbackProducts } from "../data/fallbackProducts";
 import './ProductDetail.css';
 
 const ProductDetail = () => {
@@ -24,8 +25,16 @@ const ProductDetail = () => {
         setProduct(data);
         if (data.sizes?.length) setSelectedSize(data.sizes[0]);
         if (data.colors?.length) setSelectedColor(data.colors[0]);
-      } catch (err) {
-        setOrderStatus("Failed to load product details.");
+      } catch {
+        const fallbackProduct = fallbackProducts.find(item => item._id === id);
+        if (fallbackProduct) {
+          setProduct(fallbackProduct);
+          if (fallbackProduct.sizes?.length) setSelectedSize(fallbackProduct.sizes[0]);
+          if (fallbackProduct.colors?.length) setSelectedColor(fallbackProduct.colors[0]);
+          setOrderStatus("Demo product loaded without backend connection.");
+        } else {
+          setOrderStatus("Failed to load product details.");
+        }
       }
     };
     fetchProduct();
@@ -50,7 +59,7 @@ const ProductDetail = () => {
       await OrderService.createOrder(orderData, token);
       addToCart({ ...product, size: selectedSize, color: selectedColor, quantity });
       setOrderStatus("Order placed successfully!");
-    } catch (err) {
+    } catch {
       setOrderStatus("Failed to place order.");
     }
   };

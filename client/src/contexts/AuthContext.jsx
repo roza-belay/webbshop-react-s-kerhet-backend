@@ -52,8 +52,8 @@ export const AuthProvider = ({ children }) => {
       } else {
         logoutTimer = setTimeout(() => handleLogout(), ms);
       }
-    } catch (e) {
-     
+    } catch {
+      handleLogout();
     }
   }
 

@@ -1,13 +1,23 @@
 .footer {
-  background: #222;
-  color: #fff;
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 42px 0 52px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
   text-align: center;
-  padding: 1.5rem;
-  font-size: 0.9rem;
-  margin-top: 3rem;
 }
 
+.footer p {
+  margin: 6px 0;
+}
+
+.footer-brand,
 .footer strong {
-  color: #cdb8db;
-  font-size: medium;
+  color: var(--text);
+  font-weight: 900;
+}
+
+.footer-brand {
+  font-size: 1.3rem;
+  letter-spacing: 0;
 }

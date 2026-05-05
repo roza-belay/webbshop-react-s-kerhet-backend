@@ -5,13 +5,17 @@ const Checkout = () => {
   const { user } = useAuth();
 
   if (!user) {
-    return <p>You need to log in to place an order.</p>;
+    return <p className="cart-empty">You need to log in to place an order.</p>;
   }
 
   return (
-    <div>
-      <h1>Checkout</h1>
-      <p>Proceed with your order</p>
+    <div className="checkout-page">
+      <p className="section-kicker">Checkout</p>
+      <h1>Proceed with your order</h1>
+      <p>
+        Checkout-flödet är kopplat till orderresan och är redo att byggas ut med betalning,
+        leveransval och orderbekräftelse.
+      </p>
     </div>
   );
 };
