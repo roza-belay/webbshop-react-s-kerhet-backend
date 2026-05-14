@@ -17,6 +17,7 @@ const Home = () => {
           <div className="home-actions">
             <Link to="/products" className="home-btn">Se produkter</Link>
             <Link to="/about" className="secondary-btn">Läs case</Link>
+            <Link to="/portfolio" className="secondary-btn">Roza portfolio</Link>
           </div>
 
           <div className="home-metrics" aria-label="Projektets höjdpunkter">

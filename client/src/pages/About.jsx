@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { FaEnvelope, FaGithub, FaLinkedin, FaUserTie } from "react-icons/fa";
 import sampleProfile from "../assets/profile-sample.jpg";
 import "./About.css";
 
@@ -29,22 +31,34 @@ export default function About() {
           </div>
         </div>
 
-        <aside className="contact-card">
-          <div className="about-profile">
+        <aside className="contact-card contact-card-pro">
+          <div className="contact-card-top">
             <img src={sampleProfile} alt="Roza Belay" className="profile-sample" />
+            <span className="availability-badge">Open to frontend work</span>
+          </div>
+
+          <div className="about-profile">
             <div>
+              <p className="section-kicker">Portfolio Contact</p>
               <h2 className="about-name">Roza Belay</h2>
               <p>Frontendutvecklare</p>
             </div>
           </div>
-          <div className="contact-links">
-            <a href="mailto:rozaybeyn.belay@gmail.com">Email</a>
-            <a href="https://linkedin.com/in/roza-ybeyn-belay-3b9054256" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href="https://github.com/Rozabelay339" target="_blank" rel="noreferrer">GitHub</a>
-          </div>
+
           <p className="contact-note">
-            Söker frontendroller där jag kan kombinera designkänsla med stabil React-kod.
+            Jag bygger responsiva React-gränssnitt med fokus på tydlig design,
+            produktflöden och kod som är lätt att fortsätta utveckla.
           </p>
+
+          <div className="contact-links contact-links-pro">
+            <a href="mailto:rozaybeyn.belay@gmail.com"><FaEnvelope /> Email</a>
+            <a href="https://linkedin.com/in/roza-ybeyn-belay-3b9054256" target="_blank" rel="noreferrer"><FaLinkedin /> LinkedIn</a>
+            <a href="https://github.com/Rozabelay339" target="_blank" rel="noreferrer"><FaGithub /> GitHub</a>
+          </div>
+
+          <Link to="/portfolio" className="portfolio-card-link">
+            <FaUserTie /> Öppna super portfolio
+          </Link>
         </aside>
       </div>
     </section>

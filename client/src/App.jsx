@@ -12,6 +12,7 @@ import Footer from './components/footer/footer';
 import ProductDetail from './pages/ProductDetail';
 import About from './pages/About';
 import Profile from './pages/Profile';
+import Portfolio from './pages/Portfolio';
 import './App.css';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/about" element={<About />} />
+              <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/profile" element={<Profile />} />
             </Routes>
           </main>

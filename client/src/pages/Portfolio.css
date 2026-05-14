@@ -1,0 +1,240 @@
+.portfolio-page {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 78px 0 96px;
+}
+
+.portfolio-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.portfolio-copy,
+.portfolio-profile-card,
+.portfolio-panel,
+.portfolio-contact-band {
+  border: 1px solid var(--line);
+  border-radius: 34px;
+  background: var(--panel);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+}
+
+.portfolio-copy {
+  padding: 46px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    rgba(24, 24, 27, 0.72);
+  background-size: 34px 34px, 34px 34px, cover;
+}
+
+.portfolio-copy h1 {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(3.8rem, 9vw, 8rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: 0;
+}
+
+.portfolio-lead {
+  max-width: 680px;
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 1.2rem;
+  line-height: 1.75;
+}
+
+.portfolio-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.portfolio-actions a {
+  gap: 10px;
+}
+
+.portfolio-profile-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  background: #fafafa;
+  color: #09090b;
+}
+
+.portfolio-profile-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 28px;
+  margin-bottom: 22px;
+}
+
+.portfolio-profile-card span {
+  color: #52525b;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.portfolio-profile-card h2 {
+  margin: 10px 0;
+  font-size: 2.2rem;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.portfolio-profile-card p {
+  margin: 0;
+  color: #52525b;
+  line-height: 1.6;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.portfolio-panel {
+  min-height: 260px;
+  padding: 30px;
+}
+
+.portfolio-panel.large {
+  grid-row: span 2;
+}
+
+.portfolio-panel svg {
+  color: var(--accent);
+  font-size: 1.5rem;
+}
+
+.portfolio-panel h2,
+.portfolio-contact-band h2 {
+  margin: 18px 0 12px;
+  color: var(--text);
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.portfolio-panel h3 {
+  margin: 18px 0 10px;
+  color: var(--text);
+  font-size: 1.8rem;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.portfolio-panel p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.portfolio-panel.accent {
+  border-color: rgba(6, 182, 212, 0.24);
+  background: rgba(6, 182, 212, 0.08);
+}
+
+.portfolio-panel.light {
+  background: #fafafa;
+  color: #09090b;
+}
+
+.portfolio-panel.light h3,
+.portfolio-panel.light svg {
+  color: #09090b;
+}
+
+.portfolio-panel.light p {
+  color: #52525b;
+}
+
+.inline-case-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  color: #09090b;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.inline-case-link svg {
+  font-size: 0.82rem;
+}
+
+.portfolio-contact-band {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: center;
+  margin-top: 18px;
+  padding: 34px;
+}
+
+.portfolio-contact-band h2 {
+  margin-bottom: 0;
+}
+
+.portfolio-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.portfolio-socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 42px;
+  padding: 0 15px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--text);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.portfolio-socials a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+@media (max-width: 860px) {
+  .portfolio-hero,
+  .portfolio-grid,
+  .portfolio-contact-band {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-copy {
+    padding: 32px 24px;
+  }
+
+  .portfolio-socials {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 520px) {
+  .portfolio-page {
+    width: min(100% - 20px, 1120px);
+    padding-top: 48px;
+  }
+
+  .portfolio-actions a,
+  .portfolio-socials a {
+    width: 100%;
+  }
+}

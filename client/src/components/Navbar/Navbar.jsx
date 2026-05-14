@@ -26,6 +26,7 @@ const Navbar = () => {
         <li><NavLink to="/products">Products</NavLink></li>
         <li><NavLink to="/checkout">Checkout</NavLink></li>
         <li><NavLink to="/about">Case</NavLink></li>
+        <li><NavLink to="/portfolio">Portfolio</NavLink></li>
         <li>
           {user ? <NavLink to="/profile">Profile</NavLink> : <NavLink to="/login">Login</NavLink>}
         </li>
