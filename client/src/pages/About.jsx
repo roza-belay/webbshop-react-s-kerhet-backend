@@ -11,17 +11,17 @@ export default function About() {
         <div className="about-text">
           <p className="section-kicker">Portfolio Case</p>
           <h2>TopStyle visar React, API-flöden och säkrare användarresor.</h2>
-          <p>
-            Projektet är en demo-webbshop där besökaren kan bläddra bland produkter,
-            söka, logga in och hantera kundvagn. Jag har gjort om presentationen så
-            den känns mer som ett modernt case i en portfolio.
-          </p>
-          <ul className="case-list">
-            <li>Responsiv React-layout med Vite</li>
-            <li>Produktdetaljer med storlek, färg och antal</li>
-            <li>Autentisering och orderflöden via backend-API</li>
-            <li>Uppdaterad mörk visuell identitet inspirerad av referensen</li>
-          </ul>
+  <p>
+  TopStyle är en fullstack demo-webbshop byggd med React, Vite och Node/Express.
+  Projektet implementerar autentisering med JWT, skyddade API-routes och
+  en komplett produkt- och orderflöde kopplat till MongoDB.
+</p>
+ <ul>
+  <li>JWT-baserad autentisering (login/register)</li>
+  <li>Skyddade API-routes med token-verifiering</li>
+  <li>Persistent login via localStorage</li>
+  <li>Axios-konfiguration för autentiserade requests</li>
+</ul>
           <div className="tech-stack">
             <span>React</span>
             <span>Vite</span>

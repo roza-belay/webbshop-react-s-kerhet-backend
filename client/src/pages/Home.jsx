@@ -9,7 +9,8 @@ const Home = () => {
           <p className="eyebrow">React Webshop Case</p>
           <h1 className="home-title">TopStyle</h1>
           <p className="home-subtitle">
-            En portfolio-redo webbshop byggd med React, autentisering, kundvagn
+            En 
+             webbshop byggd med React, autentisering, kundvagn
             och produktflode. Designen är uppdaterad med samma mörka, rena och
             case-baserade känsla som referensportfolion.
           </p>

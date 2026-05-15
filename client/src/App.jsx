@@ -17,27 +17,25 @@ import './App.css';
 
 function App() {
   return (
-    <AuthProvider>
-      <CartProvider>
-        <Router>
-          <Navbar />
-          <main className="App">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/products" element={<Product />} />
-              <Route path="/products/:id" element={<ProductDetail />} />
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/checkout" element={<Checkout />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/profile" element={<Profile />} />
-            </Routes>
-          </main>
-          <Footer />
-        </Router>
-      </CartProvider>
-    </AuthProvider>
+    <Router>
+      <Navbar />
+
+      <main className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Product />} />
+          <Route path="/products/:id" element={<ProductDetail />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+      </main>
+
+      <Footer />
+    </Router>
   );
 }
 
