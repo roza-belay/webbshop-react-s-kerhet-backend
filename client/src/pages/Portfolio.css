@@ -30,6 +30,13 @@
   background-size: 34px 34px, 34px 34px, cover;
 }
 
+:root[data-theme="light"] .portfolio-copy {
+  background:
+    linear-gradient(rgba(8, 18, 20, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(8, 18, 20, 0.04) 1px, transparent 1px),
+    rgba(255, 255, 255, 0.76);
+}
+
 .portfolio-copy h1 {
   margin: 0;
   color: var(--text);
@@ -67,6 +74,12 @@
   color: #09090b;
 }
 
+:root[data-theme="light"] .portfolio-profile-card,
+:root[data-theme="light"] .portfolio-panel.light {
+  background: #081214;
+  color: #f7fbfa;
+}
+
 .portfolio-profile-card img {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -81,6 +94,12 @@
   font-weight: 900;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+:root[data-theme="light"] .portfolio-profile-card span,
+:root[data-theme="light"] .portfolio-profile-card p,
+:root[data-theme="light"] .portfolio-panel.light p {
+  color: #b7c6c7;
 }
 
 .portfolio-profile-card h2 {
@@ -153,6 +172,12 @@
 .portfolio-panel.light h3,
 .portfolio-panel.light svg {
   color: #09090b;
+}
+
+:root[data-theme="light"] .portfolio-panel.light h3,
+:root[data-theme="light"] .portfolio-panel.light svg,
+:root[data-theme="light"] .inline-case-link {
+  color: #f7fbfa;
 }
 
 .portfolio-panel.light p {

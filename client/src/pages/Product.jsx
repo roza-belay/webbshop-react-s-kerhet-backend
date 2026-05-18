@@ -50,7 +50,9 @@ const Product = () => {
           Det här är en viktig del av caset eftersom arbetsgivare snabbt ser UI-flödet.
         </p>
         {usingFallback && (
-          <p className="fallback-note">Demo products are shown because the backend is not connected right now.</p>
+          <p className="fallback-note">
+            Demo products are shown because the backend is not connected right now. Local product images are matched by product name.
+          </p>
         )}
       </header>
       <Search searchProducts={setSearchTerm} />

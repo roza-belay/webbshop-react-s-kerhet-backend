@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { CartProvider } from './contexts/CartContext';
 import { AuthProvider } from './contexts/AuthContext';
 import Home from './pages/Home';
@@ -12,13 +12,34 @@ import Footer from './components/footer/footer';
 import ProductDetail from './pages/ProductDetail';
 import About from './pages/About';
 import Profile from './pages/Profile';
-import Portfolio from './pages/Portfolio';
+import Contact from './pages/Portfolio';
 import './App.css';
 
 function App() {
+  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark');
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  useEffect(() => {
+    const handlePointerMove = (event) => {
+      document.body.style.setProperty('--cursor-x', `${event.clientX}px`);
+      document.body.style.setProperty('--cursor-y', `${event.clientY}px`);
+    };
+
+    window.addEventListener('pointermove', handlePointerMove);
+    return () => window.removeEventListener('pointermove', handlePointerMove);
+  }, []);
+
+  const toggleTheme = () => {
+    setTheme((currentTheme) => (currentTheme === 'dark' ? 'light' : 'dark'));
+  };
+
   return (
     <Router>
-      <Navbar />
+      <Navbar theme={theme} onToggleTheme={toggleTheme} />
 
       <main className="App">
         <Routes>
@@ -29,7 +50,8 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/about" element={<About />} />
-          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/portfolio" element={<Navigate to="/contact" replace />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </main>

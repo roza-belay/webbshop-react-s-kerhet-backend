@@ -1,56 +1,65 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import heroImage from "../assets/image.jpg";
+
+const portfolioUrl = "https://roza-belay-portfolio.netlify.app/";
 
 const Home = () => {
   return (
     <div className="home-container">
       <section className="home-hero">
         <div className="home-hero-copy">
-          <p className="eyebrow">React Webshop Case</p>
           <h1 className="home-title">TopStyle</h1>
           <p className="home-subtitle">
-            En 
-             webbshop byggd med React, autentisering, kundvagn
-            och produktflode. Designen är uppdaterad med samma mörka, rena och
-            case-baserade känsla som referensportfolion.
+            En modern klädbutik byggd med React, backend, JWT-autentisering
+            och säkra API-flöden.
           </p>
 
           <div className="home-actions">
             <Link to="/products" className="home-btn">Se produkter</Link>
             <Link to="/about" className="secondary-btn">Läs case</Link>
-            <Link to="/portfolio" className="secondary-btn">Roza portfolio</Link>
-          </div>
-
-          <div className="home-metrics" aria-label="Projektets höjdpunkter">
-            <div className="metric">
-              <strong>React</strong>
-              <span>Komponentbaserad frontend</span>
-            </div>
-            <div className="metric">
-              <strong>Auth</strong>
-              <span>Login och skyddade flöden</span>
-            </div>
-            <div className="metric">
-              <strong>Cart</strong>
-              <span>Kundvagn och orderlogik</span>
-            </div>
+            <a href={portfolioUrl} className="secondary-btn" target="_blank" rel="noreferrer">
+              Roza portfolio
+            </a>
           </div>
         </div>
 
-        <div className="home-showcase" aria-label="Projektöversikt">
-          <article className="showcase-card featured">
-            <span>Current Focus</span>
-            <h2>Webshop med tydlig produktresa</h2>
-            <p>
-              Från browsing till produktdetalj, val av storlek/färg och order.
-            </p>
-          </article>
-          <article className="showcase-card">
-            <span>Stack</span>
-            <h3>React, Vite, Axios, JWT</h3>
-            <p>En fullstack-demo med backend-API och modern frontend-struktur.</p>
-          </article>
+        <div className="hero-bottom-video" aria-label="Animated shopping bags">
+          <div className="hero-bag-track" aria-hidden="true">
+            <img src={heroImage} alt="" />
+            <img src={heroImage} alt="" />
+            <img src={heroImage} alt="" />
+          </div>
+          <span>Secure Fullstack Fashion Store</span>
         </div>
+
+        <div className="hero-bottom-meta">
+      
+          <p className="eyebrow">Fullstack Webshop Case</p>
+        </div>
+      </section>
+
+      <section className="home-case-overview" aria-label="Projektets höjdpunkter">
+        <div className="home-metrics">
+          <div className="metric">
+            <strong>React</strong>
+            <span>Komponentbaserad frontend</span>
+          </div>
+          <div className="metric">
+            <strong>Auth</strong>
+            <span>Login och skyddade flöden</span>
+          </div>
+          <div className="metric">
+            <strong>Cart</strong>
+            <span>Kundvagn och orderlogik</span>
+          </div>
+        </div>
+
+        <article className="showcase-card case-stack-card">
+          <span>Stack</span>
+          <h3>React, Vite, Axios, JWT</h3>
+          <p>En fullstack-demo med backend-API, MongoDB, orderflöde och säkrare användarresa.</p>
+        </article>
       </section>
 
       <section className="home-sections" aria-label="Portfolio highlights">

@@ -1,23 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaEnvelope, FaGithub, FaLinkedin, FaShoppingBag, FaShieldAlt, FaCode, FaExternalLinkAlt } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin, FaLocationArrow, FaShoppingBag, FaExternalLinkAlt } from "react-icons/fa";
 import sampleProfile from "../assets/profile-sample.jpg";
 import "./Portfolio.css";
 
-const Portfolio = () => {
+const portfolioUrl = "https://roza-belay-portfolio.netlify.app/";
+
+const Contact = () => {
   return (
     <div className="portfolio-page">
       <section className="portfolio-hero">
         <div className="portfolio-copy">
-          <p className="section-kicker">Frontend Portfolio</p>
-          <h1>Roza Belay</h1>
+          <p className="section-kicker">Contact</p>
+          <h1>Kontakta Roza</h1>
           <p className="portfolio-lead">
-            Frontendutvecklare med fokus på React, responsiva gränssnitt och
-            användarflöden som känns tydliga från första klicket.
+            Vill du prata om praktik, frontendjobb eller samarbeten? Här finns
+            de snabbaste vägarna till Roza och hennes publika portfolio.
           </p>
           <div className="portfolio-actions">
             <a href="mailto:rozaybeyn.belay@gmail.com" className="home-btn">
-              <FaEnvelope /> Kontakta mig
+              <FaEnvelope /> Skicka email
+            </a>
+            <a href={portfolioUrl} className="secondary-btn" target="_blank" rel="noreferrer">
+              <FaExternalLinkAlt /> Öppna portfolio
             </a>
             <Link to="/products" className="secondary-btn">
               <FaShoppingBag /> Se webshop-case
@@ -37,19 +42,19 @@ const Portfolio = () => {
 
       <section className="portfolio-grid" aria-label="Portfolio highlights">
         <article className="portfolio-panel large">
-          <FaCode />
-          <p className="section-kicker">Core Skills</p>
-          <h2>React, Vite, CSS och API-integrationer</h2>
+          <FaLocationArrow />
+          <p className="section-kicker">Contact route</p>
+          <h2>En tydlig kontaktsida istället för en inbyggd portfolio.</h2>
           <p>
-            Jag gillar rena komponenter, tydlig informationshierarki och UI som
-            både ser professionellt ut och går att underhålla.
+            Den fulla portfolion ligger nu på Netlify-länken, medan den här sidan
+            samlar kontaktvägar och guidar vidare till webbshop-caset.
           </p>
         </article>
 
         <article className="portfolio-panel accent">
-          <FaShieldAlt />
-          <h3>Security-minded</h3>
-          <p>JWT, skyddade flöden och backend-kopplad autentisering.</p>
+          <FaEnvelope />
+          <h3>Email</h3>
+          <p>rozaybeyn.belay@gmail.com</p>
         </article>
 
         <article className="portfolio-panel light">
@@ -77,4 +82,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Contact;
